@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбери правильную дату</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Выбери правильную дату</h2>
+    <input type="date" id="dateInput">
+    <button onclick="checkDate()">Проверить</button>
+    <p id="message"></p>
+
+    <script>
+        function checkDate() {
+            const correctDate = "2000-03-15";
+            const userDate = document.getElementById("dateInput").value;
+            const message = document.getElementById("message");
+
+            if (userDate === correctDate) {
+                message.innerHTML = "✅ Поздравляю! Твоя следующая подсказка:<br><br>Когда ты отдыхаешь, мечтаешь, читаешь,<br>Здесь твой уют, здесь ты расслабляешься.";
+            } else {
+                message.innerHTML = "❌ Неверно, попробуй еще раз!";
+            }
+        }
+    </script>
+</body>
+</html>
